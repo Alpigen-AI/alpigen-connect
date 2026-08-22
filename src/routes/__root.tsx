@@ -77,22 +77,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Alpigen AI — Automated finance for solo earners" },
+      {
+        name: "description",
+        content:
+          "AI receipt capture and Safe-to-Spend guidance for freelancers and budgeters in India and the US.",
+      },
+      { name: "author", content: "Alpigen AI" },
+      { property: "og:site_name", content: "Alpigen AI" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap",
+      },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
+
   }),
   shellComponent: RootShell,
   component: RootComponent,
