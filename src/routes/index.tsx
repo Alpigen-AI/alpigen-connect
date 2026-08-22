@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 
 import logoAsset from "@/assets/alpigen-logo.png.asset.json";
+import heroBg from "@/assets/hero-bg.jpg";
+import heroPhone from "@/assets/hero-phone.png";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -111,16 +113,54 @@ function Hero() {
         style={{ background: "var(--gradient-hero)" }}
         aria-hidden
       />
-      <div className="relative z-10 mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-28">
+      <img
+        src={heroBg}
+        alt=""
+        aria-hidden
+        width={1920}
+        height={1088}
+        className="absolute inset-0 size-full object-cover opacity-45 mix-blend-screen"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-[0.14]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, oklch(1 0 0 / 0.5) 1px, transparent 1px), linear-gradient(to bottom, oklch(1 0 0 / 0.5) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+          maskImage: "radial-gradient(ellipse at 30% 20%, black, transparent 70%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute -left-32 top-10 size-[28rem] rounded-full blur-3xl"
+        style={{ background: "oklch(0.74 0.128 196 / 0.22)" }}
+      />
+      <div
+        aria-hidden
+        className="absolute -right-24 bottom-[-10rem] size-[32rem] rounded-full blur-3xl"
+        style={{ background: "oklch(0.45 0.1 250 / 0.35)" }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-32"
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent, var(--background))",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-16 px-5 py-20 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-28">
         <div className="text-primary-foreground">
-          <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs uppercase tracking-[0.16em] text-accent">
+          <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs uppercase tracking-[0.16em] text-accent backdrop-blur">
             India + United States
           </span>
           <h1
             className="mt-6 text-4xl leading-[1.08] font-semibold md:text-6xl"
             style={heading}
           >
-            Your receipts filed. Your spending answered.
+            Your receipts filed.
+            <br className="hidden md:block" /> Your spending answered.
           </h1>
           <p className="mt-6 max-w-xl text-base text-primary-foreground/75 md:text-lg">
             Alpigen AI reads every receipt, maps it to IRS Schedule C or the Income
@@ -131,7 +171,7 @@ function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
               href="#pricing"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-transform hover:-translate-y-0.5"
             >
               Scan your first receipt
               <ArrowRight className="size-4" />
@@ -140,12 +180,36 @@ function Hero() {
               Value in under 2 minutes · 5 free scans a month
             </span>
           </div>
+          <dl className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-primary-foreground/15 pt-6">
+            {[
+              ["2 min", "To first value"],
+              ["2 regimes", "US + India tax codes"],
+              ["Bank-grade", "Encrypted, read-only"],
+            ].map(([value, label]) => (
+              <div key={label}>
+                <dt className="text-xl font-semibold text-accent" style={heading}>
+                  {value}
+                </dt>
+                <dd className="mt-1 text-xs text-primary-foreground/60">{label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
-        <HeroCard />
+        <div className="relative">
+          <img
+            src={heroPhone}
+            alt="Alpigen AI mobile app showing balance and recent transactions"
+            width={768}
+            height={1024}
+            className="pointer-events-none absolute -bottom-16 -left-10 hidden w-44 drop-shadow-2xl lg:block"
+          />
+          <HeroCard />
+        </div>
       </div>
     </section>
   );
 }
+
 
 function HeroCard() {
   return (
