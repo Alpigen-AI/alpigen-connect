@@ -201,9 +201,11 @@ function Hero() {
             alt="Alpigen AI mobile app showing balance and recent transactions"
             width={768}
             height={1024}
-            className="pointer-events-none absolute -bottom-16 -left-10 hidden w-44 drop-shadow-2xl lg:block"
+            className="pointer-events-none absolute -bottom-20 -left-24 z-0 hidden w-40 drop-shadow-2xl lg:block"
           />
-          <HeroCard />
+          <div className="relative z-10">
+            <HeroCard />
+          </div>
         </div>
       </div>
     </section>
