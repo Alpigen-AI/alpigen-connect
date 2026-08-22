@@ -107,11 +107,11 @@ function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0"
         style={{ background: "var(--gradient-hero)" }}
         aria-hidden
       />
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-28">
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-28">
         <div className="text-primary-foreground">
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs uppercase tracking-[0.16em] text-accent">
             India + United States
