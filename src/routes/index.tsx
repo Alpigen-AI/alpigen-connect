@@ -82,7 +82,7 @@ function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-        <Logo className="h-10" />
+        <Logo className="h-12 md:h-14" />
         <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
           <a className="transition-colors hover:text-foreground" href="#product">
             Product
@@ -499,7 +499,7 @@ function Footer() {
   return (
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 md:flex-row md:items-center md:justify-between">
-        <Logo className="h-9" />
+        <Logo className="h-12" />
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} Alpigen AI · India & United States
         </p>
