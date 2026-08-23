@@ -18,6 +18,10 @@ import {
 
 import logoUrl from "@/assets/alpigen-logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
+import dashboardShot from "@/assets/dashboard-shot.jpg";
+import receiptScan from "@/assets/receipt-scan.jpg";
+import personaCreator from "@/assets/persona-creator.jpg";
+import personaBudgeter from "@/assets/persona-budgeter.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -313,6 +317,8 @@ function Metrics() {
 
 const features = [
   {
+    image: receiptScan,
+    alt: "Phone scanning a paper receipt with a teal scan line",
     icon: ScanLine,
     title: "AI receipt & expense categorizer",
     copy: "Snap it, drop it in the browser, or forward it to your private inbox. Vision models pull vendor, line items and totals, then tag each one to the right deduction code.",
@@ -323,6 +329,8 @@ const features = [
     ],
   },
   {
+    image: dashboardShot,
+    alt: "Alpigen AI dashboard showing balances, spending categories and budgets",
     icon: MessageSquareText,
     title: "Safe-to-Spend predictor",
     copy: "Balances, upcoming bills and savings targets are computed deterministically in the database — the AI only explains the number, it never invents it.",
@@ -345,9 +353,28 @@ function Features() {
         {features.map((f) => (
           <article
             key={f.title}
-            className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50"
+            className="group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/50"
             style={{ boxShadow: "var(--shadow-soft)" }}
           >
+            <div className="relative aspect-[16/10] overflow-hidden border-b border-border/70">
+              <img
+                src={f.image}
+                alt={f.alt}
+                loading="lazy"
+                width={1200}
+                height={750}
+                className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to top, var(--card), transparent 55%)",
+                }}
+              />
+            </div>
+            <div className="p-7">
             <div
               aria-hidden
               className="absolute -right-16 -top-16 size-40 rounded-full opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-40"
@@ -370,6 +397,7 @@ function Features() {
                 </li>
               ))}
             </ul>
+            </div>
           </article>
         ))}
       </div>
@@ -437,11 +465,15 @@ function Personas() {
     {
       icon: Building2,
       name: "The solo creator",
+      image: personaCreator,
+      alt: "Freelancer working late on a laptop at home",
       copy: "Freelance devs, creators and gig drivers who dread tax season. Every deductible rupee or dollar gets caught, with the receipt attached and no CPA invoice.",
     },
     {
       icon: CircleDollarSign,
       name: "The mindful budgeter",
+      image: personaBudgeter,
+      alt: "Young professional checking her banking app on a city street",
       copy: "Salaried Gen Z and millennials in expensive cities who want guard rails, not ledgers. One number, updated live, that already accounts for what's due.",
     },
   ];
@@ -452,18 +484,38 @@ function Personas() {
         {personas.map((p) => (
           <div
             key={p.name}
-            className="rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-accent/50"
+            className="group relative overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-accent/50"
             style={{ boxShadow: "var(--shadow-soft)" }}
           >
-            <span className="inline-flex size-11 items-center justify-center rounded-xl bg-accent/12 text-accent">
-              <p.icon className="size-5" />
-            </span>
-            <h3 className="mt-4 text-xl font-semibold" style={heading}>
-              {p.name}
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {p.copy}
-            </p>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <img
+                src={p.image}
+                alt={p.alt}
+                loading="lazy"
+                width={1000}
+                height={750}
+                className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to top, var(--card), transparent 60%)",
+                }}
+              />
+              <span className="absolute bottom-4 left-6 inline-flex size-11 items-center justify-center rounded-xl border border-accent/30 bg-accent/15 text-accent backdrop-blur">
+                <p.icon className="size-5" />
+              </span>
+            </div>
+            <div className="p-7 pt-5">
+              <h3 className="text-xl font-semibold" style={heading}>
+                {p.name}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {p.copy}
+              </p>
+            </div>
           </div>
         ))}
       </div>
