@@ -317,6 +317,8 @@ function Metrics() {
 
 const features = [
   {
+    image: receiptScan,
+    alt: "Phone scanning a paper receipt with a teal scan line",
     icon: ScanLine,
     title: "AI receipt & expense categorizer",
     copy: "Snap it, drop it in the browser, or forward it to your private inbox. Vision models pull vendor, line items and totals, then tag each one to the right deduction code.",
@@ -327,6 +329,8 @@ const features = [
     ],
   },
   {
+    image: dashboardShot,
+    alt: "Alpigen AI dashboard showing balances, spending categories and budgets",
     icon: MessageSquareText,
     title: "Safe-to-Spend predictor",
     copy: "Balances, upcoming bills and savings targets are computed deterministically in the database — the AI only explains the number, it never invents it.",
@@ -349,9 +353,28 @@ function Features() {
         {features.map((f) => (
           <article
             key={f.title}
-            className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50"
+            className="group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/50"
             style={{ boxShadow: "var(--shadow-soft)" }}
           >
+            <div className="relative aspect-[16/10] overflow-hidden border-b border-border/70">
+              <img
+                src={f.image}
+                alt={f.alt}
+                loading="lazy"
+                width={1200}
+                height={750}
+                className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to top, var(--card), transparent 55%)",
+                }}
+              />
+            </div>
+            <div className="p-7">
             <div
               aria-hidden
               className="absolute -right-16 -top-16 size-40 rounded-full opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-40"
