@@ -13,9 +13,8 @@ import {
   Wallet,
 } from "lucide-react";
 
-import logoAsset from "@/assets/alpigen-logo.png.asset.json";
+import logoUrl from "@/assets/alpigen-logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroPhone from "@/assets/hero-phone.png";
 
 export const Route = createFileRoute("/")({
   component: Landing,
