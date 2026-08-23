@@ -195,13 +195,6 @@ function Hero() {
           </dl>
         </div>
         <div className="relative">
-          <img
-            src={heroPhone}
-            alt="Alpigen AI mobile app showing balance and recent transactions"
-            width={768}
-            height={1024}
-            className="pointer-events-none absolute -bottom-20 -left-24 z-0 hidden w-40 drop-shadow-2xl lg:block"
-          />
           <div className="relative z-10">
             <HeroCard />
           </div>
