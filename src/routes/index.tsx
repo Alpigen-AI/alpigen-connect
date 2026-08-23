@@ -13,9 +13,8 @@ import {
   Wallet,
 } from "lucide-react";
 
-import logoAsset from "@/assets/alpigen-logo.png.asset.json";
+import logoUrl from "@/assets/alpigen-logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroPhone from "@/assets/hero-phone.png";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -71,7 +70,7 @@ function Landing() {
 function Logo({ className = "h-9" }: { className?: string }) {
   return (
     <img
-      src={logoAsset.url}
+      src={logoUrl}
       alt="Alpigen AI"
       className={`${className} w-auto object-contain`}
     />
@@ -196,13 +195,6 @@ function Hero() {
           </dl>
         </div>
         <div className="relative">
-          <img
-            src={heroPhone}
-            alt="Alpigen AI mobile app showing balance and recent transactions"
-            width={768}
-            height={1024}
-            className="pointer-events-none absolute -bottom-20 -left-24 z-0 hidden w-40 drop-shadow-2xl lg:block"
-          />
           <div className="relative z-10">
             <HeroCard />
           </div>
