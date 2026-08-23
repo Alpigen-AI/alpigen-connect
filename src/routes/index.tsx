@@ -397,6 +397,7 @@ function Features() {
                 </li>
               ))}
             </ul>
+            </div>
           </article>
         ))}
       </div>
