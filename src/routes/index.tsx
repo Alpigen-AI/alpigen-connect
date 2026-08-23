@@ -70,7 +70,7 @@ function Landing() {
 function Logo({ className = "h-9" }: { className?: string }) {
   return (
     <img
-      src={logoAsset.url}
+      src={logoUrl}
       alt="Alpigen AI"
       className={`${className} w-auto object-contain`}
     />
