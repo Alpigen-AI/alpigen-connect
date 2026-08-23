@@ -18,6 +18,10 @@ import {
 
 import logoUrl from "@/assets/alpigen-logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
+import dashboardShot from "@/assets/dashboard-shot.jpg";
+import receiptScan from "@/assets/receipt-scan.jpg";
+import personaCreator from "@/assets/persona-creator.jpg";
+import personaBudgeter from "@/assets/persona-budgeter.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
