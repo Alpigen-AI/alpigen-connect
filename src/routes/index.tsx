@@ -465,11 +465,15 @@ function Personas() {
     {
       icon: Building2,
       name: "The solo creator",
+      image: personaCreator,
+      alt: "Freelancer working late on a laptop at home",
       copy: "Freelance devs, creators and gig drivers who dread tax season. Every deductible rupee or dollar gets caught, with the receipt attached and no CPA invoice.",
     },
     {
       icon: CircleDollarSign,
       name: "The mindful budgeter",
+      image: personaBudgeter,
+      alt: "Young professional checking her banking app on a city street",
       copy: "Salaried Gen Z and millennials in expensive cities who want guard rails, not ledgers. One number, updated live, that already accounts for what's due.",
     },
   ];
@@ -480,18 +484,38 @@ function Personas() {
         {personas.map((p) => (
           <div
             key={p.name}
-            className="rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-accent/50"
+            className="group relative overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-accent/50"
             style={{ boxShadow: "var(--shadow-soft)" }}
           >
-            <span className="inline-flex size-11 items-center justify-center rounded-xl bg-accent/12 text-accent">
-              <p.icon className="size-5" />
-            </span>
-            <h3 className="mt-4 text-xl font-semibold" style={heading}>
-              {p.name}
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {p.copy}
-            </p>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <img
+                src={p.image}
+                alt={p.alt}
+                loading="lazy"
+                width={1000}
+                height={750}
+                className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to top, var(--card), transparent 60%)",
+                }}
+              />
+              <span className="absolute bottom-4 left-6 inline-flex size-11 items-center justify-center rounded-xl border border-accent/30 bg-accent/15 text-accent backdrop-blur">
+                <p.icon className="size-5" />
+              </span>
+            </div>
+            <div className="p-7 pt-5">
+              <h3 className="text-xl font-semibold" style={heading}>
+                {p.name}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {p.copy}
+              </p>
+            </div>
           </div>
         ))}
       </div>
